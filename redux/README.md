@@ -21,7 +21,7 @@
 * 如果你不想订阅store中的任何参数，返回null或者undefined作为mapStateToProps的结果
 * 传递给Connect。注意mapStateToProps返回的值应该是普通对象(plain object)
 
-####两个参数：state，ownProps(可选)
+#### 两个参数：state，ownProps(可选)
 
 * state参数的值是整个Redux store，等同于Redux里调用store.getState()的结果
 * ownProps参数的值是组件定义使用的时候，在组件上传递的props
