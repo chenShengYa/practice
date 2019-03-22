@@ -18,7 +18,7 @@
 ### mapStateToProps
 
 * 代替store.subscribe,每当订阅的参数在store中发生变化时调用
-* 如果你不想订阅store中的任何参数，返回null或者undefined作为mapStateToProps的结果
+* 如果你不想订阅store中的任何参数，返回null或者undefined作为mapStateToProps的结果返回
 * 传递给Connect。注意mapStateToProps返回的值应该是普通对象(plain object)
 
 #### 两个参数：state，ownProps(可选)
