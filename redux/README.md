@@ -1,7 +1,7 @@
 # Redux
 
 ## Actions
-### 定义了每个动作，描述发生了什么，调用store.dispatch()来提交状态
+### 定义了每个动作，描述发生了什么，调用store.dispatch()来提交状态改变state
 
 ## Reducers
 ### 定义了每一个action动作对应对状态的操作，并将结果反馈给store
@@ -13,7 +13,7 @@
 ### 调用connect，从store的中取得连接的组件需要的参数
 
 ### mapStateToProps
-#### 代替store.subscribe,每当订阅的参数在store中发生变化时调用，如果你不想订阅store中的任何参数，返回null或者undefined作为mapStateToProps的结果传递给Connect，注意返回的值应该是纯对象(plain object)
+#### 代替store.subscribe,每当订阅的参数在store中发生变化时调用，如果你不想订阅store中的任何参数，返回null或者undefined作为mapStateToProps的结果传递给Connect。注意mapStateToProps返回的值应该是普通对象(plain object)
 #### 两个参数：state，ownProps(可选)
 #### state参数的值是整个Redux store，等同于Redux里调用store.getState()的结果
 #### ownProps参数的值是组件定义使用的时候，在组件上传递的props
