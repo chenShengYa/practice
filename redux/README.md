@@ -36,6 +36,23 @@ mapDispatchToProps作为connect的第二个参数，是用于向store发起actio
 * 默认在connect之后如果不传第二个参数mapDispatchToProps，被链接的组件会收到props.dispatch它可以用来调用action
 * 如果将mapDispatchToProps作为第二个参数传给connect，它能创建能被调用的dispatch，并且作为props传递给被连接的组件
 
+#### 两个参数：dispatch，ownProps(可选)
+
+* dispatch作为mapDispatchToProps的第一个参数，一般情况下你可能会将它放在一个函数里并返回一个调用它的结果。另一种情况是返回一个普通对象，或者返回一个由action creator创建的结果
+* ownProps作为mapDispatchToProps的第二个参数，可选意味着如果你添加了第二个参数，mapDispatchToProps也会像mapStateToProps一样，在自身props参数改变的时候调用函数。组件的值变化了可以将新的值传递给action并dispatch给store
+* mapDispatchToProps函数的结果应该返回一个普通对象
+
 #### bindActionCreators
+
+为了解决手动包装函数太过于乏味，React-Redux提供了简单的办法
+
+##### 两个参数：function or object，dispatch
+
+* 第一个参数可以是funciton返回一个action  creator或者是object里面每一个字段都是一个action  creator
+* bindActionCreators他能自动帮你传递每一个函数他组件的参数，所以你不需要每一个手动绑定
+
+
+
+
 
 
