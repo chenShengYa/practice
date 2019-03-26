@@ -14,6 +14,7 @@
 ## Connect
 
 调用connect，从store的中取得连接的组件需要的参数
+如果用不到第一个参数，可以传null来代替
 
 ### mapStateToProps
 
