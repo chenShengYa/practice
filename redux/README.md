@@ -41,6 +41,7 @@ mapDispatchToProps作为connect的第二个参数，是用于向store发起actio
 * dispatch作为mapDispatchToProps的第一个参数，一般情况下你可能会将它放在一个函数里并返回一个调用它的结果。另一种情况是返回一个普通对象，或者返回一个由action creator创建的结果
 * ownProps作为mapDispatchToProps的第二个参数，可选意味着如果你添加了第二个参数，mapDispatchToProps也会像mapStateToProps一样，在自身props参数改变的时候调用函数。组件的值变化了可以将新的值传递给action并dispatch给store
 * mapDispatchToProps函数的结果应该返回一个普通对象
+* 在默认情况下，mapDispatchToProps有收到参数，那么返回的对象将使用不了默认的dispatch，如果你想使用的话，需要手动将dispatch添加到返回的对象上
 
 #### bindActionCreators
 
