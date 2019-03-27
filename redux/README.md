@@ -8,6 +8,13 @@
 
 定义了每一个action动作对应对状态的操作，并将结果反馈给store
 
+## 异步Action
+由于dispatch action到reducer反馈给store这个过程是同步的，立刻返回结果
+如果要异步就需要调用中间件来改变这样的过程，例如redux-thunk，redux-promiseredux-saga等
+
+## Middleware
+* middleware是指可以被嵌入在框架接收请求到产生响应过程之中的代码
+* 中间件通过applyMiddleware，将所有的中间件加入到dispatch上，最终返回一个被中间件包装过的dispatch，并返回一个store的副本
 
 # React-Redux
 
