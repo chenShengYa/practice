@@ -8,18 +8,33 @@
 
 定义了每一个action动作对应对状态的操作，并将结果反馈给store
 
+### combineReducers
+
+将多个拆分的reducer组合成一个并返回一个新的Reducer函数
+
 ## Store
 
 整个应用的 state 被储存在一棵 object tree 中，并且这个 object tree 只存在于唯一一个 store 中。
 
+Store 有以下职责：
+* 维持应用的 state
 * 通过 getState() 获取想要的state
 * 通过 dispatch(action) 发起一个action来更新state
 * 通过 subscribe(listener) 来注册监听器
 * 通过 subscribe(listener) 返回的函数注销监听器
 
+### 初始化state
+
+主要有两种方法来初始化应用的 state 。
+
+* 可以使用 createStore 方法中的第二个可选参数 preloadedState。
+* 也可以在 reducer 中为 undefined 的 state 参数指定的默认的初始值。这个可以通过在 reducer 中添加一个明确的检查来完成，也可以使用 ES6 中默认参数的语法 function myReducer(state = someDefaultValue, action)
+
+preloadedState默认值的优先级大于reducer默认值的优先级，如果指定了preloadedState，被指定的reducer默认初始值为preloadedState，没有被制定的reducer为undefined，则选择reducer设置的默认初始值
+
 ## 异步Action
 由于dispatch action到reducer反馈给store这个过程是同步的，立刻返回结果
-如果要异步就需要调用中间件来改变这样的过程，例如redux-thunk，redux-promiseredux-saga等
+如果要异步就需要调用中间件来改变这样的过程，例如redux-thunk，redux-promise，redux-saga等
 
 ## Middleware
 * middleware是指可以被嵌入在框架接收请求到产生响应过程之中的代码
