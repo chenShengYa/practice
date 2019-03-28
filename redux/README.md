@@ -8,6 +8,15 @@
 
 定义了每一个action动作对应对状态的操作，并将结果反馈给store
 
+## Store
+
+整个应用的 state 被储存在一棵 object tree 中，并且这个 object tree 只存在于唯一一个 store 中。
+
+* 通过 getState() 获取想要的state
+* 通过 dispatch(action) 发起一个action来更新state
+* 通过 subscribe(listener) 来注册监听器
+* 通过 subscribe(listener) 返回的函数注销监听器
+
 ## 异步Action
 由于dispatch action到reducer反馈给store这个过程是同步的，立刻返回结果
 如果要异步就需要调用中间件来改变这样的过程，例如redux-thunk，redux-promiseredux-saga等
