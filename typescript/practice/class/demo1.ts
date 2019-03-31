@@ -8,6 +8,6 @@ class Greeter {
     }
 }
 
-let a: Greeter;
-a = new Greeter("world");
+let A: Greeter;
+A = new Greeter("world");
 console.log(a.greet());
