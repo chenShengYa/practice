@@ -1,5 +1,5 @@
 "use strict";
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 var lettersRegexp = /^[A-Za-z]+$/;
 var LettersOnlyValidator = /** @class */ (function () {
     function LettersOnlyValidator() {

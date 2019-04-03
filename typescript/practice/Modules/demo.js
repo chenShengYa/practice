@@ -1,5 +1,5 @@
 "use strict";
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 var ZipCodeValidator_1 = require("./ZipCodeValidator");
 var LettersOnlyValidator_1 = require("./LettersOnlyValidator");
 // Some samples to try
