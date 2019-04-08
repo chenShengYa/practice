@@ -4,6 +4,7 @@ var Calculator = /** @class */ (function () {
     function Calculator() {
         this.current = 0;
         this.memory = 0;
+        this.operator = '';
     }
     Calculator.prototype.processDigit = function (digit, currentValue) {
         if (digit >= "0" && digit <= "9") {

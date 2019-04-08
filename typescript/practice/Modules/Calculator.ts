@@ -1,7 +1,7 @@
 export class Calculator {
     private current = 0;
     private memory = 0;
-    private operator: string;
+    private operator: string = '';
 
     protected processDigit(digit: string, currentValue: number) {
         if (digit >= "0" && digit <= "9") {
@@ -15,7 +15,7 @@ export class Calculator {
         }
     }
 
-    protected evaluateOperator(operator: string, left: number, right: number): number {
+    protected evaluateOperator(operator: string, left: number, right: number): any {
         switch (this.operator) {
             case "+": return left + right;
             case "-": return left - right;
