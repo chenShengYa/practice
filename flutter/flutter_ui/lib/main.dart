@@ -1,47 +1,127 @@
 import 'package:flutter/material.dart';
+import 'demo/listView.dart';
+import 'demo/hello.dart';
+import 'demo/basic.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(App());
 
-class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
+class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Tutorial',
-      home: new TutorialHome(),
+      debugShowCheckedModeBanner: false,
+      home: Home(),
+      theme: ThemeData(
+          primarySwatch: Colors.yellow,
+          highlightColor: Color.fromRGBO(255, 255, 255, 0.5),
+          splashColor: Colors.white70),
     );
   }
 }
 
-class TutorialHome extends StatelessWidget {
+class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    //Scaffold是Material中主要的布局组件.
-    return new Scaffold(
-      appBar: new AppBar(
-        leading: new IconButton(
-          icon: new Icon(Icons.menu),
-          tooltip: 'Navigation menu',
-          onPressed: null,
-        ),
-        title: new Text('Example title'),
-        actions: <Widget>[
-          new IconButton(
-            icon: new Icon(Icons.search),
-            tooltip: 'Search',
-            onPressed: null,
+    return DefaultTabController(
+      length: 3,
+      child: Scaffold(
+          backgroundColor: Colors.grey[100],
+          appBar: AppBar(
+            leading: IconButton(
+              icon: Icon(Icons.menu),
+              tooltip: 'Navigation',
+              onPressed: () => {debugPrint('Navigation button is press')},
+            ),
+            title: Text('hello'),
+            actions: <Widget>[
+              IconButton(
+                icon: Icon(Icons.search),
+                tooltip: 'Search',
+                onPressed: () => {debugPrint('Search button is press')},
+              ),
+            ],
+            elevation: 0,
+            bottom: TabBar(
+              unselectedLabelColor: Colors.black38,
+              indicatorColor: Colors.black54,
+              indicatorSize: TabBarIndicatorSize.label,
+              indicatorWeight: 1.0,
+              tabs: <Widget>[
+                Tab(
+                  icon: Icon(Icons.local_florist),
+                ),
+                Tab(
+                  icon: Icon(Icons.change_history),
+                ),
+                Tab(
+                  icon: Icon(Icons.directions_bike),
+                )
+              ],
+            ),
           ),
-        ],
-      ),
-      //body占屏幕的大部分
-      body: new Center(
-        child: new Text('Hello, world!'),
-      ),
-      floatingActionButton: new FloatingActionButton(
-        tooltip: 'Add', // used by assistive technologies
-        child: new Icon(Icons.add),
-        onPressed: null,
-      ),
+          body: TabBarView(
+            children: <Widget>[
+              Icon(
+                Icons.local_florist,
+                size: 128.0,
+                color: Colors.black12,
+              ),
+              Icon(
+                Icons.change_history,
+                size: 128.0,
+                color: Colors.black12,
+              ),
+              Icon(
+                Icons.directions_bike,
+                size: 128.0,
+                color: Colors.black12,
+              )
+            ],
+          ),
+          drawer: Drawer(
+            child: ListView(
+              padding: EdgeInsets.zero,
+              children: <Widget>[
+                DrawerHeader(
+                  child: Text('header'.toUpperCase()),
+                  decoration: BoxDecoration(color: Colors.grey[100]),
+                ),
+                ListTile(
+                  title: Text(
+                    'Messages',
+                    textAlign: TextAlign.right,
+                  ),
+                  trailing: Icon(
+                    Icons.message,
+                    color: Colors.black12,
+                    size: 22.0,
+                  ),
+                ),
+                ListTile(
+                  title: Text(
+                    'Favorite',
+                    textAlign: TextAlign.right,
+                  ),
+                  trailing: Icon(
+                    Icons.favorite,
+                    color: Colors.black12,
+                    size: 22.0,
+                  ),
+                ),
+                ListTile(
+                  title: Text(
+                    'Settings',
+                    textAlign: TextAlign.right,
+                  ),
+                  trailing: Icon(
+                    Icons.settings,
+                    color: Colors.black12,
+                    size: 22.0,
+                  ),
+                )
+              ],
+            ),
+          )),
     );
   }
 }
