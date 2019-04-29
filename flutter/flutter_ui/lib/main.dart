@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'demo/listView.dart';
 import 'demo/hello.dart';
+import 'demo/drawer.dart';
+import 'demo/bottom_navigation_bar.dart';
 import 'demo/basic.dart';
+import 'demo/layout.dart';
+import 'demo/view.dart';
 
 void main() => runApp(App());
 
@@ -23,15 +27,10 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 3,
+      length: 4,
       child: Scaffold(
           backgroundColor: Colors.grey[100],
           appBar: AppBar(
-            leading: IconButton(
-              icon: Icon(Icons.menu),
-              tooltip: 'Navigation',
-              onPressed: () => {debugPrint('Navigation button is press')},
-            ),
             title: Text('hello'),
             actions: <Widget>[
               IconButton(
@@ -40,7 +39,8 @@ class Home extends StatelessWidget {
                 onPressed: () => {debugPrint('Search button is press')},
               ),
             ],
-            elevation: 0,
+            // 阴影
+            elevation: 0.0,
             bottom: TabBar(
               unselectedLabelColor: Colors.black38,
               indicatorColor: Colors.black54,
@@ -55,73 +55,23 @@ class Home extends StatelessWidget {
                 ),
                 Tab(
                   icon: Icon(Icons.directions_bike),
+                ),
+                Tab(
+                  icon: Icon(Icons.view_quilt),
                 )
               ],
             ),
           ),
           body: TabBarView(
             children: <Widget>[
-              Icon(
-                Icons.local_florist,
-                size: 128.0,
-                color: Colors.black12,
-              ),
-              Icon(
-                Icons.change_history,
-                size: 128.0,
-                color: Colors.black12,
-              ),
-              Icon(
-                Icons.directions_bike,
-                size: 128.0,
-                color: Colors.black12,
-              )
+              ListViewDemo(),
+              BasicDemo(),
+              LayoutDemo(),
+              ViewDemo(),
             ],
           ),
-          drawer: Drawer(
-            child: ListView(
-              padding: EdgeInsets.zero,
-              children: <Widget>[
-                DrawerHeader(
-                  child: Text('header'.toUpperCase()),
-                  decoration: BoxDecoration(color: Colors.grey[100]),
-                ),
-                ListTile(
-                  title: Text(
-                    'Messages',
-                    textAlign: TextAlign.right,
-                  ),
-                  trailing: Icon(
-                    Icons.message,
-                    color: Colors.black12,
-                    size: 22.0,
-                  ),
-                ),
-                ListTile(
-                  title: Text(
-                    'Favorite',
-                    textAlign: TextAlign.right,
-                  ),
-                  trailing: Icon(
-                    Icons.favorite,
-                    color: Colors.black12,
-                    size: 22.0,
-                  ),
-                ),
-                ListTile(
-                  title: Text(
-                    'Settings',
-                    textAlign: TextAlign.right,
-                  ),
-                  trailing: Icon(
-                    Icons.settings,
-                    color: Colors.black12,
-                    size: 22.0,
-                  ),
-                )
-              ],
-            ),
-          )),
+          drawer: DrawerDemo(),
+          bottomNavigationBar: BottomNavigationBarDemo()),
     );
   }
 }
