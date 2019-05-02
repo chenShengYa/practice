@@ -36,7 +36,7 @@ class ListViewDemo extends StatelessWidget {
             Positioned.fill(
               child: Material(
                 color: Colors.transparent,
-                child: InkWell(
+                child: InkWell( // 溅墨效果
                   splashColor: Colors.white.withOpacity(0.3),
                   highlightColor: Colors.white.withOpacity(0.1),
                   onTap: () {
