@@ -3,6 +3,16 @@ import '../demo/button.dart';
 import '../demo/floating_action_button.dart';
 import '../demo/popup_menu_button.dart';
 import '../demo/form.dart';
+import '../demo/checkbox.dart';
+import '../demo/radio.dart';
+import '../demo/switch.dart';
+import '../demo/slider.dart';
+import '../demo/datetime.dart';
+import '../demo/simple_dialog.dart';
+import '../demo/alert_dialog.dart';
+import '../demo/bottom_sheet.dart';
+import '../demo/snack_bar.dart';
+import '../demo/expansion_panel.dart';
 
 class MaterialComponents extends StatelessWidget {
   @override
@@ -14,6 +24,16 @@ class MaterialComponents extends StatelessWidget {
       ),
       body: ListView(
         children: <Widget>[
+          listItem(title: 'ExpansionPanelDemo', page: ExpansionPanelDemo()),
+          listItem(title: 'SnackBarDemo', page: SnackBarDemo()),
+          listItem(title: 'BottomSheetDemo', page: BottomSheetDemo()),
+          listItem(title: 'AlertDialogDemo', page: AlertDialogDemo()),
+          listItem(title: 'SimpleDialogDemo', page: SimpleDialogDemo()),
+          listItem(title: 'DateTimeDemo', page: DateTimeDemo()),
+          listItem(title: 'SliderDemo', page: SliderDemo()),
+          listItem(title: 'SwitchDemo', page: SwitchDemo()),
+          listItem(title: 'RadioDemo', page: RadioDemo()),
+          listItem(title: 'CheckboxDemo', page: CheckboxDemo()),
           listItem(title: 'FormDemo', page: FormDemo()),
           listItem(title: 'PopupMenuButton', page: PopupMenuButtonDemo()),
           listItem(title: 'Button', page: ButtonDemo()),
