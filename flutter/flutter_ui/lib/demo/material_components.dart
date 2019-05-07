@@ -13,6 +13,7 @@ import '../demo/alert_dialog.dart';
 import '../demo/bottom_sheet.dart';
 import '../demo/snack_bar.dart';
 import '../demo/expansion_panel.dart';
+import '../demo/chip.dart';
 
 class MaterialComponents extends StatelessWidget {
   @override
@@ -24,6 +25,7 @@ class MaterialComponents extends StatelessWidget {
       ),
       body: ListView(
         children: <Widget>[
+          listItem(title: 'ChipDemo', page: ChipDemo()),
           listItem(title: 'ExpansionPanelDemo', page: ExpansionPanelDemo()),
           listItem(title: 'SnackBarDemo', page: SnackBarDemo()),
           listItem(title: 'BottomSheetDemo', page: BottomSheetDemo()),
